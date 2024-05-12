@@ -10,6 +10,11 @@
 
 {% block contenido %}
 
+    <div style="margin-top: 20px;">
+    <button style="background-color: blue;"><a href="{% url 'clase:index' %}" 
+        style="color: white; text-decoration: none;">Volver</a></button>
+    </div>
+
     {% for comision in comisiones %}
         <h1>{{ comision.nombre }} | {{ comision.curso }} | {{ comision.profesor }}</h1>
         <ol>
