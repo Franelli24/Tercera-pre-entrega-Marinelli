@@ -7,5 +7,5 @@ def index(request):
 
 def clase_list(request):
     consulta = Comision.objects.all()
-    contexto = {"clases": consulta}
+    contexto = {"comisiones": consulta}
     return render(request, "clase/clase_list.html", contexto)
