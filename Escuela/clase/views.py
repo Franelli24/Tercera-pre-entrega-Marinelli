@@ -1,8 +1,11 @@
 from django.shortcuts import render
 
-from . import models
+from clase.models import Comision
 
 def index(request):
-    consulta = models.Comision.objects.all()
-    contexto = {"comisiones": consulta}
-    return render(request, "clase/index.html", contexto)
+    return render(request, "clase/index.html")
+
+def clase_list(request):
+    consulta = Comision.objects.all()
+    contexto = {"clases": consulta}
+    return render(request, "clase/clase_list.html", contexto)

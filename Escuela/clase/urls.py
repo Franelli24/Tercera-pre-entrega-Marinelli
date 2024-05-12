@@ -1,9 +1,10 @@
 from django.urls import path
 
-from . import views
+from clase.views import clase_list, index
 
 app_name = "clase"
 
 urlpatterns = [
-    path("", views.index, name="index"),
+    path("", index, name="index"),
+    path("clase/list",clase_list, name="clase_list"),
 ]
