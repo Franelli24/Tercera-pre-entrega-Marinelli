@@ -5,10 +5,13 @@
 {% endblock titulo %}
 
 {% block contenido %}
-    {% for comision in comisiones %}
-        <h1>{{ comision.nombre }} | {{ comision.curso }} | {{ comision.profesor }}</h1>
-        <ol>
-            {% for estudiante in comision.estudiante.all %}<li>{{ estudiante }}</li>{% endfor %}
-        </ol>
-    {% endfor %}
+    <h1>Comisiones</h1>
+    <div>
+        {% for comision in comisiones %}
+            <h1>{{ comision.nombre }} | {{ comision.curso }} | {{ comision.profesor }}</h1>
+            <ol>
+                {% for estudiante in comision.estudiante.all %}<li>{{ estudiante }}</li>{% endfor %}
+            </ol>
+        {% endfor %}
+    </div>
 {% endblock contenido %}
