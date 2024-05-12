@@ -1,14 +1,15 @@
 {% extends 'core/base.html' %}
 
 {% block titulo %}
-    Comisiones
+    Clases | Lista comisiones
 {% endblock titulo %}
 
 {% block body_title %}
-    Lista de Comisiones
+    Lista
 {% endblock body_title %}
 
 {% block contenido %}
+
     <div>
         {% for comision in comisiones %}
             <h1>{{ comision.nombre }} | {{ comision.curso }} | {{ comision.profesor }}</h1>
