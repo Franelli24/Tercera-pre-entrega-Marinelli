@@ -10,11 +10,6 @@
 
 {% block contenido %}
     <div>
-        {% for comision in comisiones %}
-            <h1>{{ comision.nombre }} | {{ comision.curso }} | {{ comision.profesor }}</h1>
-            <ol>
-                {% for estudiante in comision.estudiante.all %}<li>{{ estudiante }}</li>{% endfor %}
-            </ol>
-        {% endfor %}
+        <a href="{% url'clase:clase_list' %}">Lista de clases</a>
     </div>
 {% endblock contenido %}
