@@ -1,8 +1,8 @@
-# Nombre del Proyecto
+# Tercera pre-entrega
 
-Comisión:
+Comisión: #54140
 
-Alumno:
+Alumno: Franco Marinelli
 
 ## Explicación breve del proyecto en cuanto al servicio
 
