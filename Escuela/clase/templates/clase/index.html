@@ -5,16 +5,16 @@
 {% endblock titulo %}
 
 {% block body_title %}
-    Comisiones
+    Clases
 {% endblock body_title %}
 
 {% block contenido %}
     <div>
-        <a href="{% url 'clase:clase_list' %}">Lista de clases</a>
+        <a href="{% url 'clase:clase_list' %}" style="color: yellow;" >Lista de comisiones</a>
     </div>
 
     <div style="margin-top: 20px;">
-    <button style="background-color: blue;"><a href="{% url 'core:index' %}" 
-        style="color: white; text-decoration: none;">Inicio</a></button>
+    <button style="background-color: rgb(70, 70, 70);"><a href="{% url 'core:index' %}" 
+        style="color: rgb(255, 251, 0);">Inicio</a></button>
     </div>
 {% endblock contenido %}
