@@ -20,4 +20,8 @@
         {% endfor %}
     </ul>
 
+    <a href="{% url 'clase:clase_create_estudiante' comision_id=comision.id %}" 
+    style="color: rgb(255, 251, 0); text-decoration: none;">Agregar estudiantes</a>
+
+
 {% endblock contenido %}
