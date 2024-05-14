@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+{% block titulo %}
+    Clase | Categoría de Clases
+{% endblock titulo %}
+{% block body_title %}
+    {% if form.instance.pk %}
+        Clase - Categorías de Clases: Edición
+    {% else %}
+        Clase - Categorías de Clases: Creación
+    {% endif %}
+{% endblock body_title %}
+{% block contenido %}
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <button type="submit">Guardar</button>
+    </form>
+{% endblock contenido %}
+

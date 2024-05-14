@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 
 from clase.models import Comision
-from clase.forms import ClaseListForm
+from clase.forms import ClaseListForm, ClaseEstudianteForm
 
 def index(request):
     return render(request, "clase/index.html")
@@ -28,3 +28,13 @@ def clase_create(request):
     else:  # GET
         form = ClaseListForm()
     return render(request, "clase/clase_form.html", {"form": form})
+
+def clase_create_estudiante(request):
+    if request.method == "POST":
+        form = ClaseEstudianteForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("clase:detalle_estudiante")
+    else:  # GET
+        form = ClaseEstudianteForm()
+    return render(request, "clase/clase_estudiante_form.html", {"form": form})
