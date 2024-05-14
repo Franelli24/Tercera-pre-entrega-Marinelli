@@ -12,13 +12,13 @@
 
     <div style="margin-top: 20px;">
     <button style="background-color: rgb(70, 70, 70);"><a href="{% url 'clase:index' %}" 
-            style="color: rgb(255, 251, 0);">Volver</a></button>
+            style="color: rgb(255, 251, 0);  text-decoration: none;">Volver</a></button>
     </div>
 
     {% for comision in comisiones %}
         <h2>{{ comision.nombre }} | {{ comision.curso }} | {{ comision.profesor }}</h2>
             <button style="background-color: rgb(70, 70, 70);"><a href="{% url 'clase:detalle_estudiante' comision.id %}"
-                 style="color: rgb(255, 251, 0);">Estudiantes</a></button>
+                 style="color: rgb(255, 251, 0);  text-decoration: none;">Estudiantes</a></button>
     {% endfor %}
 
 {% endblock contenido %}
