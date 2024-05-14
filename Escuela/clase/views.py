@@ -9,9 +9,14 @@ def index(request):
     return render(request, "clase/index.html")
 
 def clase_list(request):
-    consulta = Comision.objects.all()
+    busqueda = request.GET.get("busqueda", None)
+    if busqueda:
+        consulta = Comision.objects.filter(curso__nombre__icontains=busqueda)
+    else:
+        consulta = Comision.objects.all()
     contexto = {"comisiones": consulta}
     return render(request, "clase/clase_list.html", contexto)
+
 
 def nosotros(request):
     return render(request, "clase/nosotros.html")
