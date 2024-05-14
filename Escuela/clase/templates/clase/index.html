@@ -9,9 +9,11 @@
 {% endblock body_title %}
 
 {% block contenido %}
-    <div>
-        <a href="{% url 'clase:clase_list' %}" style="color: yellow;  text-decoration: none;"" >Lista de comisiones</a>
-    </div>
+<div>
+    <a href="{% url 'clase:clase_list' %}" style="color: yellow; text-decoration: none; display: block;">Lista de comisiones</a>
+    <a href="{% url 'clase:clase_create' %}" style="color: yellow; text-decoration: none; display: block;">Creación de comisiones</a>
+</div>
+
 
     <div style="margin-top: 20px;">
     <button style="background-color: rgb(70, 70, 70);"><a href="{% url 'core:index' %}" 
