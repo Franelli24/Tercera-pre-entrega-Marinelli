@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+
+{% block titulo %}
+    Comisiones | Estudiantes
+{% endblock titulo %}
+
+{% block body_title %}
+    Lista de Estudiantes
+{% endblock body_title %}
+
+{% block contenido %}
+    <div style="margin-top: 20px;">
+        <button style="background-color: rgb(70, 70, 70);"><a href="{% url 'clase:clase_list' %}" 
+            style="color: rgb(255, 251, 0); text-decoration: none;">Volver</a></button>
+    </div>
+    <h2>Estudiantes</h2>
+    <ul>
+        {% for estudiante in estudiantes %}
+            <li>{{ estudiante.nombre }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'clase:clase_create_estudiante' comision_id=comision.id %}" 
+    style="color: rgb(255, 251, 0); text-decoration: none;">Agregar estudiantes</a>
+
+
+{% endblock contenido %}

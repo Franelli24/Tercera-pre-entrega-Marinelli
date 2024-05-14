@@ -1,14 +1,22 @@
 {% extends 'core/base.html' %}
 
 {% block titulo %}
-    Comisiones
+    Comisiones | Inicio
 {% endblock titulo %}
 
+{% block body_title %}
+    Clases
+{% endblock body_title %}
+
 {% block contenido %}
-    {% for comision in comisiones %}
-        <h1>{{ comision.nombre }} | {{ comision.curso }} | {{ comision.profesor }}</h1>
-        <ol>
-            {% for estudiante in comision.estudiante.all %}<li>{{ estudiante }}</li>{% endfor %}
-        </ol>
-    {% endfor %}
+<div>
+    <a href="{% url 'clase:clase_list' %}" style="color: yellow; text-decoration: none; display: block;">Lista de comisiones</a>
+    <a href="{% url 'clase:clase_create' %}" style="color: yellow; text-decoration: none; display: block;">Creación de comisiones</a>
+</div>
+
+
+    <div style="margin-top: 20px;">
+    <button style="background-color: rgb(70, 70, 70);"><a href="{% url 'core:index' %}" 
+        style="color: rgb(255, 251, 0);  text-decoration: none;">Inicio</a></button>
+    </div>
 {% endblock contenido %}

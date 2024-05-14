@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+
+{% block titulo %}
+    Comisiones | Lista de Comisiones
+{% endblock titulo %}
+
+{% block body_title %}
+    Lista de Comisiones
+{% endblock body_title %}
+
+{% block contenido %}
+
+    <div class="pb-lg-3">
+            <form action="{% url 'clase:clase_list' %}" method="get">
+            <input type="text" name="busqueda" placeholder="Buscar por curso...">
+        </form>
+    </div>
+
+    <div style="margin-top: 20px;">
+    <button style="background-color: rgb(70, 70, 70);"><a href="{% url 'clase:index' %}" 
+            style="color: rgb(255, 251, 0);  text-decoration: none;">Volver</a></button>
+    </div>
+
+    {% for comision in comisiones %}
+
+
+        <h2>{{ comision.nombre }} | {{ comision.curso }} | {{ comision.profesor }}</h2>
+            <button style="background-color: rgb(70, 70, 70);"><a href="{% url 'clase:detalle_estudiante' comision.id %}"
+                 style="color: rgb(255, 251, 0);  text-decoration: none;">Estudiantes</a></button>
+                 <button style="background-color: rgb(70, 70, 70);"><a href="{% url 'clase:clase_delete' comision.id %}" 
+                         style="color: rgb(255, 251, 0);  text-decoration: none;">Borrar</a></button>
+
+    {% endfor %}
+
+{% endblock contenido %}
