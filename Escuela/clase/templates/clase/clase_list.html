@@ -26,7 +26,9 @@
 
         <h2>{{ comision.nombre }} | {{ comision.curso }} | {{ comision.profesor }}</h2>
             <button style="background-color: rgb(70, 70, 70);"><a href="{% url 'clase:detalle_estudiante' comision.id %}"
-                 style="color: rgb(255, 251, 0);  text-decoration: none;">Estudiantes</a></button><a href="{% url 'clase:clase_delete' comision.id %}">Borrar</a>
+                 style="color: rgb(255, 251, 0);  text-decoration: none;">Estudiantes</a></button>
+                 <button style="background-color: rgb(70, 70, 70);"><a href="{% url 'clase:clase_delete' comision.id %}" 
+                         style="color: rgb(255, 251, 0);  text-decoration: none;">Borrar</a></button>
 
     {% endfor %}
 
