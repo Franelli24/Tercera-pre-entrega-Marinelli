@@ -46,3 +46,10 @@ def clase_create_estudiante(request, comision_id):
     else:  # GET
         form = ClaseEstudianteForm()
     return render(request, "clase/clase_estudiante_form.html", {"form": form})
+
+def clase_delete(request, pk: int):
+    consulta = Comision.objects.get(id=pk)
+    if request.method == "POST":
+        consulta.delete()
+        return redirect("clase:clase_list")
+    return render(request, "clase/clase_confirm_delete.html", {"object": consulta})

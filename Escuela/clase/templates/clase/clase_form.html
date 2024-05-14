@@ -1,14 +1,12 @@
 {% extends 'core/base.html' %}
 {% block titulo %}
-    Clase | Categoría de Clases
+    Clase | Creación de Comisiones
 {% endblock titulo %}
+
 {% block body_title %}
-    {% if form.instance.pk %}
-        Clase - Categorías de Clases: Edición
-    {% else %}
-        Clase - Categorías de Clases: Creación
-    {% endif %}
+        Clase - Creación de Comisiones
 {% endblock body_title %}
+
 {% block contenido %}
     <form method="post">
         {% csrf_token %}

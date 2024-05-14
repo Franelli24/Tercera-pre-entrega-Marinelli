@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+{% block titulo %}
+    Clases | Lista de Comisiones
+{% endblock titulo %}
+{% block body_title %}
+    Clases - Lista de Comisiones: Eliminar
+{% endblock body_title %}
+{% block contenido %}
+
+    <p class="fs-5  fst-italic ">¿Confirma eliminar "{{ object.nombre }} | {{ object.curso }} | {{object.profesor}}"?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button style="background-color: rgb(70, 70, 70);"><a 
+            style="color: rgb(255, 251, 0);  text-decoration: none;">Confirmar</a></button>
+    </form>
+    <a href="{% url 'clase:clase_list' %}" style="color: rgb(255, 251, 0);  
+            text-decoration: none;">Volver la lista de comisiones</a>
+{% endblock contenido %}
+
