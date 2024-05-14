@@ -10,5 +10,5 @@ urlpatterns = [
     path("clase/nosotros",nosotros, name="nosotros"),
     path('clase/detalle_estudiante/<int:comision_id>',detalle_estudiante, name='detalle_estudiante'),
     path("clase/clase_create", clase_create, name="clase_create"),
-    path("clase/clase_create_estudiante", clase_create_estudiante, name="clase_create_estudiante"),
+    path("clase/clase_create_estudiante/<int:comision_id>", clase_create_estudiante, name="clase_create_estudiante"),
 ]

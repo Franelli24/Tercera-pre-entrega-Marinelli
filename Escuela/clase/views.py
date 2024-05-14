@@ -1,4 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse
+from django.http import HttpResponseRedirect
 
 from clase.models import Comision
 from clase.forms import ClaseListForm, ClaseEstudianteForm
@@ -29,12 +31,13 @@ def clase_create(request):
         form = ClaseListForm()
     return render(request, "clase/clase_form.html", {"form": form})
 
-def clase_create_estudiante(request):
+def clase_create_estudiante(request, comision_id):
     if request.method == "POST":
         form = ClaseEstudianteForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("clase:detalle_estudiante")
+            # Redirige a la vista detalle_estudiante con el comision_id dado
+            return HttpResponseRedirect(reverse('clase:detalle_estudiante', args=[comision_id]))
     else:  # GET
         form = ClaseEstudianteForm()
     return render(request, "clase/clase_estudiante_form.html", {"form": form})
