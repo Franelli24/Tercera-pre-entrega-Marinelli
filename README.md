@@ -5,7 +5,7 @@ Comisión: #54140
 Alumno: Franco Marinelli
 
 ## Explicación breve del proyecto en cuanto al servicio
-    Es un sistemas en el que se puede administrar cada comision con sus clases, alumnos y profesores.
+    Es un sistemas en el que se puede administrar cada comision con sus cursos, alumnos y profesores.
 
 ## Explicación breve técnica: urls, modelos, plantillas
     Urls index: sirve para volver al menu principal o ir al menu de lista.
