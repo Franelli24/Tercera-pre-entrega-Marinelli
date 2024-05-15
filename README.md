@@ -37,4 +37,4 @@ Alumno: Franco Marinelli
     Poder agregar estudiantes a sus respectivas comisiones.
 
 ## Problemas conocidos
-    No se agregan los estudiantes.
+    No se agregan los estudiantes a la lista.
