@@ -7,14 +7,21 @@
 {% endblock body_title %}
 {% block contenido %}
 
-    <p class="fs-5  fst-italic ">¿Confirma eliminar "{{ object.nombre }} | {{ object.curso }} | {{object.profesor}}"?</p>
+<div class="container py-3">
+    <!-- Mensaje de confirmación -->
+    <p class="fs-5 fst-italic">¿Confirma eliminar "{{ object.nombre }} | {{ object.curso }} | {{ object.profesor }}"?</p>
 
+    <!-- Formulario de confirmación -->
     <form method="post">
         {% csrf_token %}
-        <button style="background-color: rgb(70, 70, 70);"><a 
-            style="color: rgb(255, 251, 0);  text-decoration: none;">Confirmar</a></button>
+        <button type="submit" class="btn btn-dark text-warning">Confirmar</button>
     </form>
-    <a href="{% url 'clase:clase_list' %}" style="color: rgb(255, 251, 0);  
-            text-decoration: none;">Volver la lista de comisiones</a>
+
+    <!-- Enlace Volver -->
+    <div class="mt-3">
+        <a href="{% url 'clase:clase_list' %}" class="btn btn-dark text-warning">Volver a la lista de comisiones</a>
+    </div>
+</div>
+
 {% endblock contenido %}
 

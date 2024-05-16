@@ -9,19 +9,26 @@
 {% endblock body_title %}
 
 {% block contenido %}
-    <div style="margin-top: 20px;">
-        <button style="background-color: rgb(70, 70, 70);"><a href="{% url 'clase:clase_list' %}" 
-            style="color: rgb(255, 251, 0); text-decoration: none;">Volver</a></button>
+<div class="container py-3">
+    <!-- Botón Volver -->
+    <div class="mb-3">
+        <a href="{% url 'clase:clase_list' %}" class="btn btn-dark text-warning">Volver</a>
     </div>
+
+    <!-- Título Estudiantes -->
     <h2>Estudiantes</h2>
-    <ul>
+
+    <!-- Lista de Estudiantes -->
+    <ul class="list-group mb-3">
         {% for estudiante in estudiantes %}
-            <li>{{ estudiante.nombre }}</li>
+            <li class="list-group-item bg-dark text-white">{{ estudiante.nombre }}</li>
         {% endfor %}
     </ul>
 
-    <a href="{% url 'clase:clase_create_estudiante' comision_id=comision.id %}" 
-    style="color: rgb(255, 251, 0); text-decoration: none;">Agregar nuevo estudiante</a>
+    <!-- Enlace Agregar nuevo estudiante -->
+    <a href="{% url 'clase:clase_create_estudiante' comision_id=comision.id %}" class="btn btn-dark text-warning">Agregar nuevo estudiante</a>
+</div>
+
 
 
 {% endblock contenido %}

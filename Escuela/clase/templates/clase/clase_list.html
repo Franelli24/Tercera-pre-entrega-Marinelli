@@ -10,28 +10,48 @@
 
 {% block contenido %}
 
-    <div class="pb-lg-3">
-            <form action="{% url 'clase:clase_list' %}" method="get">
-            <input type="text" name="busqueda" placeholder="Buscar por curso...">
-        </form>
+<div class="container py-3">
+    <div class="row">
+        <div class="col-lg-6 mb-3">
+            <form action="{% url 'clase:clase_list' %}" method="get" class="d-flex">
+                <input type="text" name="busqueda" class="form-control me-2" placeholder="Buscar por curso...">
+                <button type="submit" class="btn btn-dark text-warning ">Buscar</button>
+            </form>
+        </div>
+        <div class="col-lg-6 text-end">
+            <a href="{% url 'clase:index' %}" class="btn btn-dark text-warning ">Volver</a>
+        </div>
     </div>
 
-    <div style="margin-top: 20px;">
-    <button style="background-color: rgb(70, 70, 70);"><a href="{% url 'clase:index' %}" 
-            style="color: rgb(255, 251, 0);  text-decoration: none;">Volver</a></button>
+    <!-- Tabla de clases -->
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="bg-dark text-warning ">
+                <tr>
+                    <th class="text-warning ">Nombre</th>
+                    <th class="text-warning ">Curso</th>
+                    <th class="text-warning ">Profesor</th>
+                    <th class="text-warning ">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for object in object_list %}
+                    <tr>
+                        <td class="text-warning">{{ object.nombre }}</td>
+                        <td class="text-warning">{{ object.curso }}</td>
+                        <td class="text-warning">{{ object.profesor }}</td>
+                        <td>
+                            <a href="{% url 'clase:detalle_estudiante' object.id %}" class="btn btn-success btn-sm text-dark ">Estudiantes</a>
+                            <a href="{% url 'clase:clase_delete' object.id %}" class="btn btn-danger btn-sm text-dark ">Borrar</a>
+                            <a href="{% url 'clase:clase_update' object.id %}" class="btn btn-warning btn-sm text-dark ">Editar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
+</div>
 
-    {% for object in object_list %}
 
-
-        <h2>{{ object.nombre }} | {{ object.curso }} | {{ object.profesor }}</h2>
-            <button style="background-color: rgb(70, 70, 70);"><a href="{% url 'clase:detalle_estudiante' object.id %}"
-                 style="color: rgb(255, 251, 0);  text-decoration: none;">Estudiantes</a></button>
-                 <button style="background-color: rgb(70, 70, 70);"><a href="{% url 'clase:clase_delete' object.id %}" 
-                         style="color: rgb(255, 251, 0);  text-decoration: none;">Borrar</a></button>
-                         <button style="background-color: rgb(70, 70, 70);"><a href="{% url 'clase:clase_update' object.id %}" 
-                            style="color: rgb(255, 251, 0);  text-decoration: none;">Editar</a></button>
-
-    {% endfor %}
 
 {% endblock contenido %}

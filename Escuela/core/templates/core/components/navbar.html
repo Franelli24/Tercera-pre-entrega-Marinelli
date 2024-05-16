@@ -5,8 +5,34 @@
         <a class="navbar-brand" href="{% url 'core:index' %}">
             <img src="{% static 'core/img/coderhouse.jpg' %}" alt="..." style="width: 200px; height: auto;">
         </a>
+        <nav class="navbar navbar-expand-lg navbar-black bg-black ">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse justify-content-end">
+                    <ul class="navbar-nav">
+                        {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="btn btn-dark text-warning" href="{% url 'clase:index' %}">Comisiones</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="btn btn-dark text-bg-dark border border-dark text-warning ">{{ user.username }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <form action="{% url 'core:logout' %}" method="post">
+                                    {% csrf_token %}
+                                    <button class="btn btn-dark text-warning">Logout</button>
+                                </form>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="btn btn-dark text-warning" href="{% url 'core:login' %}">Login</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
         
-        <a class="btn btn-warning" href="{% url 'clase:index' %}">Comisiones</a> <!-- Cambiado el color del botón a amarillo (warning) -->
+        
     </div>
 </nav>
 

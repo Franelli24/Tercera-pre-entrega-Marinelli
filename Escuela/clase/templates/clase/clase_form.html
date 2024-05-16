@@ -13,14 +13,21 @@
 {% endblock body_title %}
 
 {% block contenido %}
+<div class="container py-3">
     <form method="post">
         {% csrf_token %}
-        <table>
-            {{ form.as_table }}
-        </table>
-        <button style="background-color: rgb(70, 70, 70); color: yellow;">Guardar</button>
+        <div >
+            <table >
+                {{ form.as_table }}
+            </table>
+        </div>
+        <button type="submit" class="btn btn-dark text-warning">Guardar</button>
     </form>
-    <button style="background-color: rgb(70, 70, 70);"><a href="{% url 'clase:index' %}" style="color: rgb(255, 251, 0);  
-        text-decoration: none;">Volver</a></button>
+
+    <div class="mt-3">
+        <a href="{% url 'clase:index' %}" class="btn btn-dark text-warning">Volver</a>
+    </div>
+</div>
+
 {% endblock contenido %}
 
