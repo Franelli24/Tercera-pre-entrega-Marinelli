@@ -9,20 +9,28 @@
 {% endblock body_title %}
 
 {% block contenido %}
-    <div class="contenido">
-        <p>
-            ¡Hola a todos! Soy Franco, el fundador de esta página. Desde muy joven, 
-            he sentido una pasión por la programación. A lo largo de los años, 
-            he dedicado mi tiempo y energía a explorar este fascinante mundo, aprendiendo todo lo que puedo y 
-            adquiriendo experiencia en Python.
-        </p>
-        <p>
-            Mi objetivo al crear esta página es probar mis límites, proporcionando a nuestros visitantes 
-            (profesores/tutores) una aprobación.
-            Cuando no estoy trabajando en la página, me encanta ir al gimnasio. 
-            Creo que es importante encontrar un equilibrio entre el trabajo y el tiempo libre.
-        </p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-body bg-black ">
+                    <p>
+                        ¡Hola a todos! Soy Franco, el fundador de esta página. Desde muy joven, 
+                        he sentido una pasión por la programación. A lo largo de los años, 
+                        he dedicado mi tiempo y energía a explorar este fascinante mundo, aprendiendo todo lo que puedo y 
+                        adquiriendo experiencia en Python.
+                    </p>
+                    <p>
+                        Mi objetivo al crear esta página es probar mis límites, proporcionando a nuestros visitantes 
+                        (profesores/tutores) una aprobación.
+                        Cuando no estoy trabajando en la página, me encanta ir al gimnasio. 
+                        Creo que es importante encontrar un equilibrio entre el trabajo y el tiempo libre.
+                    </p>
+                </div>
+            </div>
+            <a href="{% url 'core:index' %}" class="btn btn-dark mt-3 text-warning ">Volver</a>
+        </div>
     </div>
-    <button style="background-color: rgb(70, 70, 70);"><a href="{% url 'core:index' %}" style="color: rgb(255, 251, 0);  
-            text-decoration: none;">Volver</a></button>
+</div>
+
 {% endblock contenido %}

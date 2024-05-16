@@ -27,7 +27,11 @@ Alumno: Franco Marinelli
     Plantilla core/base.html: guarda el diseño de lo que va a ser toda la página, junto con su encabezado y pie en  una carpeta aparte llamada 'components'.
     Plantilla clase/nosotros.hmtl: guarda el mensaje del creador para los visitantes.
     Plantilla clase/index.hmtl: guarda los links para ir a ver la lista de comisiones y para crear una.
+<<<<<<< HEAD
     Plantilla clase/list.html: guarda un buscador de comisiones que se buscan por nombre de curso, y muestra las comisiones con lbotones para borrar y ver estudiantes.
+=======
+    Plantilla clase/list.html: guarda un buscador de comisiones que se buscan por nombre de curso y profesor, y muestra las comisiones con los botones para borrar y ver estudiantes.
+>>>>>>> prueba
     Plantilla clase/detalle_estudiante.html: guarda una lista con los estudiantes que pertenecen a dicha comisión y un botón para agregar estudiantes.
     Plantilla clase/clase_estudiante_form.html: guarda el formulario (guardado en el archivo forms.py) para llenar el nombre del estudiante que quiere agregar junto con el botón de guardar.
     Plantilla clase/clase_confirm_delete.html: guarda un botón con una pregunta para confirmar si quiere borrar la comisión elegida.

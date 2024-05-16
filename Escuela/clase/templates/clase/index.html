@@ -9,14 +9,14 @@
 {% endblock body_title %}
 
 {% block contenido %}
-<div>
-    <a href="{% url 'clase:clase_list' %}" style="color: yellow; text-decoration: none; display: block;">Lista de comisiones</a>
-    <a href="{% url 'clase:clase_create' %}" style="color: yellow; text-decoration: none; display: block;">Creación de comisiones</a>
-</div>
-
-
-    <div style="margin-top: 20px;">
-    <button style="background-color: rgb(70, 70, 70);"><a href="{% url 'core:index' %}" 
-        style="color: rgb(255, 251, 0);  text-decoration: none;">Inicio</a></button>
+<div class="container py-3">
+    <div class="mb-3">
+        <a href="{% url 'clase:clase_list' %}" class="btn btn-dark text-warning d-block mb-2">Lista de comisiones</a>
+        <a href="{% url 'clase:clase_create' %}" class="btn btn-dark text-warning d-block">Creación de comisiones</a>
     </div>
+
+    <div>
+        <a href="{% url 'core:index' %}" class="btn btn-dark text-warning">Inicio</a>
+    </div>
+</div>
 {% endblock contenido %}
