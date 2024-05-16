@@ -6,7 +6,7 @@ from . import models
 class ClaseListForm(forms.ModelForm):
     class Meta:
         model = models.Comision
-        fields = ["nombre", "curso", "profesor"]
+        fields = ["nombre", "curso", "profesor","estudiante"]
 
 
 class ClaseEstudianteForm(forms.ModelForm):

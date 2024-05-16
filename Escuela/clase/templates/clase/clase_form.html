@@ -4,7 +4,12 @@
 {% endblock titulo %}
 
 {% block body_title %}
+    {% if form.instance.pk %}
+        Clase - Edición de Comisiones
+    {% else %}
         Clase - Creación de Comisiones
+    {% endif %}
+        
 {% endblock body_title %}
 
 {% block contenido %}
