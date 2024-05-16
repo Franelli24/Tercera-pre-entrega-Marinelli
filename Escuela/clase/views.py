@@ -1,22 +1,38 @@
+from typing import Any
+from django.db.models import Q
+from django.db.models.query import QuerySet
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 
 from clase.models import Comision
 from clase.forms import ClaseListForm, ClaseEstudianteForm
+from django.views.generic import CreateView, ListView, DetailView, UpdateView,DeleteView
 
 def index(request):
     return render(request, "clase/index.html")
 
-def clase_list(request):
-    busqueda = request.GET.get("busqueda", None)
-    if busqueda:
-        consulta = Comision.objects.filter(curso__nombre__icontains=busqueda)
-    else:
-        consulta = Comision.objects.all()
-    contexto = {"comisiones": consulta}
-    return render(request, "clase/clase_list.html", contexto)
+# def clase_list(request):
+#     busqueda = request.GET.get("busqueda", None)
+#     if busqueda:
+#         consulta = Comision.objects.filter(curso__nombre__icontains=busqueda)
+#     else:
+#         consulta = Comision.objects.all()
+#     contexto = {"comisiones": consulta}
+#     return render(request, "clase/clase_list.html", contexto)
 
+class ClaseList(ListView):
+    model = Comision
+    template_name = "clase/clase_list.html"
+
+    def get_queryset(self) -> QuerySet[Any]:
+        queryset = super().get_queryset()
+        busqueda = self.request.GET.get("busqueda")
+        if busqueda:
+            queryset = Comision.objects.filter(
+                Q(curso__nombre__icontains=busqueda) | Q(profesor__nombre__icontains=busqueda)
+                )
+        return queryset
 
 def nosotros(request):
     return render(request, "clase/nosotros.html")
