@@ -10,22 +10,18 @@
 
 {% block contenido %}
 <div class="container py-3">
-    <!-- Botón Volver -->
     <div class="mb-3">
         <a href="{% url 'clase:clase_list' %}" class="btn btn-dark text-warning">Volver</a>
     </div>
 
-    <!-- Título Estudiantes -->
     <h2>Estudiantes</h2>
 
-    <!-- Lista de Estudiantes -->
     <ul class="list-group mb-3">
         {% for estudiante in estudiantes %}
             <li class="list-group-item bg-dark text-white">{{ estudiante.nombre }}</li>
         {% endfor %}
     </ul>
 
-    <!-- Enlace Agregar nuevo estudiante -->
     <a href="{% url 'clase:clase_create_estudiante' comision_id=comision.id %}" class="btn btn-dark text-warning">Agregar nuevo estudiante</a>
 </div>
 
