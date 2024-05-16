@@ -34,7 +34,7 @@ Alumno: Franco Marinelli
     Plantilla clase/clase_form.html: guarda el formulario (guardado en el archivo forms.py) para crear una comisión llenar los datos de nombre de comisión, curso y profesor.
 
 ## Mejoras futuras
-    Poder agregar estudiantes a sus respectivas comisiones.
+    Poder agregar estudiantes a sus respectivas comisiones sin tener que ir a editar la comisión.
 
 ## Problemas conocidos
-    No se agregan los estudiantes a la lista.
+    No se agregan los estudiantes a la lista automáticamente.
