@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    Register
+{% endblock titulo %}
+
+{% block body_title %}
+    Nuevo usuario
+{% endblock body_title %}
+
+{% block contenido %}
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <button type="submit" class="btn btn-dark text-warning"">Registrarse</button>
+        <button class="btn btn-dark "><a href="{% url 'core:index' %}" class="dark text-warning text-decoration-none ">Cancelar</a></button>
+    </form>
+{% endblock contenido %}
