@@ -15,6 +15,9 @@ Alumno: Franco Marinelli
     Urls clase_create: te lleva a donde podras crear una comisión.
     Urls delete: te lleva a un menu para confirmar si queres eliminar una comisión.
     Urls clase_create_estudiante: te lleva a donde podras agregar estudiantes a una comisión.
+    Urls login: te lleva a loguear el usuario.
+    Urls logout: te lleva de salir de la sesión actual.
+    Urls register: te lleva a registrar un usuario.
 
 
     Modelo Curso: el curso asignado con su nombre (número).
@@ -32,6 +35,9 @@ Alumno: Franco Marinelli
     Plantilla clase/clase_estudiante_form.html: guarda el formulario (guardado en el archivo forms.py) para llenar el nombre del estudiante que quiere agregar junto con el botón de guardar.
     Plantilla clase/clase_confirm_delete.html: guarda un botón con una pregunta para confirmar si quiere borrar la comisión elegida.
     Plantilla clase/clase_form.html: guarda el formulario (guardado en el archivo forms.py) para crear una comisión llenar los datos de nombre de comisión, curso y profesor.
+    Plantilla core/login.html: guarda el formulario para ingresar el username y contraseña.
+    Plantilla core/logout.html: guarda un botón par confirmar cerrar la sesión.
+    Plantilla core/register.html: guarda un formulario donde el usuario creara su cuenta ingresando su nombre de usuario, contraseña y confirmación de la contraseña.
 
 ## Mejoras futuras
     Poder agregar estudiantes a sus respectivas comisiones sin tener que ir a editar la comisión.
