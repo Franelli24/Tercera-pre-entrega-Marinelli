@@ -1,4 +1,6 @@
 from typing import Any
+
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
 from django.db.models.query import QuerySet
 from django.shortcuts import render, get_object_or_404
@@ -46,7 +48,7 @@ class ClaseList(ListView):
                 )
         return queryset
 
-class ClaseCreate(CreateView):
+class ClaseCreate(LoginRequiredMixin, CreateView):
     model = Comision
     template_name = "clase/clase_form.html"
     form_class = ClaseListForm
