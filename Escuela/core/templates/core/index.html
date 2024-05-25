@@ -10,11 +10,11 @@
 <header class="masthead">
 
     {% if user.is_authenticated %}
-        <p class="text-info">¡Bienvenido {{ user.username }}!</p>
+        <p class="text-warning">¡Bienvenido {{ user.username }}!</p>
     {% endif %}
 
     {% if mensaje %}
-        <p class="text-info">{{ mensaje }} ¡Bienvenido!</p>  
+        <p class="text-warning">{{ mensaje }} ¡Bienvenido!</p>  
     {% endif %}
 
     <div class="container position-relative">
