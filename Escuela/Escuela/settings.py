@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "core",
     "clase",
+    "estudiante",
 ]
 
 MIDDLEWARE = [
@@ -127,3 +128,5 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = reverse_lazy("core:login")
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
