@@ -13,7 +13,7 @@ class ClaseAdmin(admin.ModelAdmin):
     )
     list_display_links = ("comision",)
     search_fields = ("comision.curso", "estudiante")
-    list_filter = ("estudiante",)
+    list_filter = ("estudiante","comision")
     date_hierarchy = "fecha_inscripcion"
 
 
