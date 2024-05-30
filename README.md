@@ -24,6 +24,8 @@ Alumno: Franco Marinelli
     Modelo Estudiante: el estudiante que estará en en el curso.
     Modelo Profesor: el profesor que estará en el curso.
     Modelo Comision: agrupa todos los demas modelos para tenerlos en un mismo lugar.
+    Modelo estudiante/Estudiante: Usuario creado en la página.
+    Modelo estudiante/Clase: Clase en la que el estudiante esta inscripto.
 
 
     Plantilla core/index.html: guarda la imagen y el texto que aparecen en el menu principal.
@@ -38,9 +40,14 @@ Alumno: Franco Marinelli
     Plantilla core/login.html: guarda el formulario para ingresar el username y contraseña.
     Plantilla core/logout.html: guarda un botón par confirmar cerrar la sesión.
     Plantilla core/register.html: guarda un formulario donde el usuario creara su cuenta ingresando su nombre de usuario, contraseña y confirmación de la contraseña.
+    Plantilla core/footer.html: guarda el pie de página.
+    Plantilla core/navbar.html: guarda el encabezado de la página.
 
 ## Mejoras futuras
     Poder agregar estudiantes a sus respectivas comisiones sin tener que ir a editar la comisión.
 
 ## Problemas conocidos
     No se agregan los estudiantes a la lista automáticamente.
+
+## Link de Youtube
+    https://youtu.be/hcn4p4GCiEY
